@@ -13,7 +13,9 @@ import UIKit
 class ViewController: UIViewController, UITextFieldDelegate {
    var weight : Double?
    var height : Double?
-   var bmi : Double? {
+   
+    //BMI Calculation Function
+    var bmi : Double? {
       get {
          if (weight != nil) && (height != nil) {
             return weight! / (height! * height!)
@@ -27,6 +29,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
    @IBOutlet weak var heightTextField: UITextField!
    @IBOutlet weak var weightTextField: UITextField!
    
+   /* Start of Default Setup Code*/
    override func viewDidLoad() {
       super.viewDidLoad()
       // Do any additional setup after loading the view, typically from a nib.
@@ -48,8 +51,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
          self.bmiLabel.text = String(format: "%4.1f", b)
       }
    }
+   /* End of Default Setup Code*/
    
-   //Called when ever the textField looses focus
+   //Called when ever the textField loses focus
    func textFieldDidEndEditing(textField: UITextField) {
       
       //First we check if textField.text actually contains a (wrapped) String
