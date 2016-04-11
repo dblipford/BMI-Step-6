@@ -10,7 +10,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
    var weight : Double?
    var height : Double?
    
@@ -28,7 +28,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
    @IBOutlet weak var bmiLabel: UILabel!
    @IBOutlet weak var heightTextField: UITextField!
    @IBOutlet weak var weightTextField: UITextField!
-   
+    @IBOutlet weak var heightPickerView: UIPickerView!
+    @IBOutlet weak var weightPickerView: UIPickerView!
+    
    /* Start of Default Setup Code*/
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -88,6 +90,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
       updateUI()
       
    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+       return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+       //TBD: Write this code
+        
+        return 1
+    }
    
 }
 
